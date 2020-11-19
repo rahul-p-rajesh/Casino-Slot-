@@ -1,0 +1,130 @@
+:root {
+  --speed: 1;
+  --goingDown: 0; /*Disabled this variable*/
+  --animationSelector: slotstop;
+}
+body {
+  padding: 0 10%;
+}
+#inputSpeedDiv {
+  display: block;
+  font-size: 30pt;
+  align-content: center;
+  position: relative;
+  margin-top: 50px;
+  margin-left: 15%;
+}
+input {
+  width: 60px;
+  font-size: 30pt;
+}
+#output {
+  display: inline-block;
+  width: 300px;
+  border: solid black;
+  font-size: 40px;
+  position: absolute;
+  margin-top: 220px;
+  margin-left: 5%;
+}
+
+.button {
+  display: inline;
+  position: relative;
+  margin-top: 220px;
+  margin-left: 15%;
+  border-top: 1px solid #052336;
+  background: #d66565;
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(#cf9934),
+    to(#d66565)
+  );
+  background: -webkit-linear-gradient(top, #cf9934, #d66565);
+  background: -moz-linear-gradient(top, #cf9934, #d66565);
+  background: -ms-linear-gradient(top, #cf9934, #d66565);
+  background: -o-linear-gradient(top, #cf9934, #d66565);
+  padding: 11px 22px;
+  -webkit-border-radius: 16px;
+  -moz-border-radius: 16px;
+  border-radius: 16px;
+  -webkit-box-shadow: rgba(0, 0, 0, 1) 0 1px 0;
+  -moz-box-shadow: rgba(0, 0, 0, 1) 0 1px 0;
+  box-shadow: rgba(0, 0, 0, 1) 0 1px 0;
+  text-shadow: rgba(0, 0, 0, 0.4) 0 1px 0;
+  color: #000000;
+  font-size: 30px;
+  font-family: Georgia, serif;
+  text-decoration: none;
+  vertical-align: middle;
+}
+.button:hover {
+  border-top-color: #d45353;
+  background: #ce5757;
+  color: rgb(0, 0, 0);
+}
+.button:active {
+  border-top-color: #1b435e;
+  background: #1b435e;
+}
+.machine {
+  background-color: peru;
+  border: dashed brown 3px;
+  height: 250px;
+  width: 750px;
+  display: flex;
+  z-index: 5;
+  position: relative;
+  margin-top: 5%;
+}
+
+.slot {
+  height: 200px;
+  width: 200px;
+  margin: 20px;
+  background-color: beige;
+  border: solid darkblue;
+  z-index: 1;
+  overflow: hidden;
+
+  text-align: center;
+  font-size: 60pt;
+  line-height: 150px;
+}
+.slot .value {
+  display: inline-block;
+  animation-name: var(--animationSelector);
+  animation-iteration-count: infinite; /*var(--goingDown);*/
+  animation-duration: calc(1s / var(--speed));
+  z-index: 3;
+  padding-top: 15%;
+}
+@keyframes slotspin {
+  0% {
+    transform: translateY(-200px);
+  }
+  100% {
+    transform: translateY(230px);
+  }
+}
+
+@keyframes slotstop {
+  0% {
+    font-size: 60pt;
+  }
+  25% {
+    font-size: 70pt;
+  }
+  50% {
+    font-size: 80pt;
+  }
+
+  75% {
+    font-size: 70pt;
+  }
+  100% {
+    font-size: 60pt;
+  }
+}
